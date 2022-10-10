@@ -29,7 +29,10 @@ namespace AspNetIdentity.Pages.Account
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, "admin"),
-                    new Claim(ClaimTypes.Email, "admin@website.com")
+                    new Claim(ClaimTypes.Email, "admin@website.com"),
+                    new Claim("Department", "HR"),
+                    new Claim("Admin", ""),
+                    new Claim("Manager", ""),
                 };
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

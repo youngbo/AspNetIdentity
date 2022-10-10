@@ -6,8 +6,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services
     .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie();
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+    {
+        options.Cookie.Name = CookieAuthenticationDefaults.AuthenticationScheme;
+        // default is /account/login  use if it need a custom login path
+        options.LoginPath = "/account/login";
+        options.AccessDeniedPath = "/account/accessDenied";
+    });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly",
+        policy => policy.RequireClaim("Admin"));
+
+    options.AddPolicy("MustBelongToHRDepartment",
+        policy => policy.RequireClaim("Department", "HR"));
+
+    options.AddPolicy("HRManagerOnly", 
+        policy => policy.RequireClaim("Department", "HR")
+                        .RequireClaim("Manager"));
+});
 
 var app = builder.Build();
 

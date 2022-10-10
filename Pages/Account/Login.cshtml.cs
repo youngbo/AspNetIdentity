@@ -10,8 +10,6 @@ namespace AspNetIdentity.Pages.Account
 {
     public class LoginModel : PageModel
     {
-        private const string CookieAuth = "CookieAuth";
-
         [BindProperty]
         public Credential Credential { get; set; }
 
@@ -36,10 +34,17 @@ namespace AspNetIdentity.Pages.Account
                     new Claim("EmploymentDate","2022-10-01")
                 };
 
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = Credential.RememberMe
+                };
+
+
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal = new ClaimsPrincipal(new List<ClaimsIdentity> { identity});
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, 
+                    principal, authProperties);
                 return RedirectToPage("/index");
             }
             return Page();
@@ -55,5 +60,8 @@ namespace AspNetIdentity.Pages.Account
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Display(Name = "Remeber Me")]
+        public bool RememberMe { get; set; }
     }
 }

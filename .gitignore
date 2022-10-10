@@ -1,3 +1,7 @@
-.vs/
-bin/
-obj/
+webapi/.vs/
+webapi/bin/
+webapi/obj/
+
+webapp/.vs/
+webapp/bin/
+webapp/obj/

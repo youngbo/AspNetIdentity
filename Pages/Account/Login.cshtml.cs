@@ -33,6 +33,7 @@ namespace AspNetIdentity.Pages.Account
                     new Claim("Department", "HR"),
                     new Claim("Admin", ""),
                     new Claim("Manager", ""),
+                    new Claim("EmploymentDate","2022-10-01")
                 };
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

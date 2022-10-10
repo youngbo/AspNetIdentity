@@ -1,4 +1,6 @@
+using AspNetIdentity.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,10 +24,13 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("MustBelongToHRDepartment",
         policy => policy.RequireClaim("Department", "HR"));
 
-    options.AddPolicy("HRManagerOnly", 
+    options.AddPolicy("HRManagerOnly",
         policy => policy.RequireClaim("Department", "HR")
-                        .RequireClaim("Manager"));
+                        .RequireClaim("Manager")
+                        .Requirements.Add(new HRManagerProbationRequirement(3)));
 });
+
+builder.Services.AddTransient<IAuthorizationHandler, HRManagerProbationRequirementHandler>();
 
 var app = builder.Build();
 

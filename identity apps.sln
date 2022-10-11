@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetIdentity", "webapp\AspNetIdentity.csproj", "{10AFFEE0-63A9-45B0-ABB3-ED0CA3F97715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web App", "webapp\Web App.csproj", "{10AFFEE0-63A9-45B0-ABB3-ED0CA3F97715}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web Api", "webapi\Web Api.csproj", "{BF835269-4883-4199-BF10-745D36787917}"
 EndProject

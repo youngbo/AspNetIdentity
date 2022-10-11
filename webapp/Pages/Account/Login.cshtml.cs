@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Xml.Linq;
+using Web_App.Authorization;
 
 namespace AspNetIdentity.Pages.Account
 {
@@ -15,14 +16,14 @@ namespace AspNetIdentity.Pages.Account
 
         public void OnGet()
         {
-        }       
+        }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid) return Page();
 
             //verify the credential
-            if (Credential.UserName=="admin" && Credential.Password == "password")
+            if (Credential.UserName == "admin" && Credential.Password == "password")
             {
                 var claims = new List<Claim>
                 {
@@ -31,7 +32,7 @@ namespace AspNetIdentity.Pages.Account
                     new Claim("Department", "HR"),
                     new Claim("Admin", ""),
                     new Claim("Manager", ""),
-                    new Claim("EmploymentDate","2022-10-01")
+                    new Claim("EmploymentDate","2022-6-01")
                 };
 
                 var authProperties = new AuthenticationProperties
@@ -41,27 +42,13 @@ namespace AspNetIdentity.Pages.Account
 
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                ClaimsPrincipal principal = new ClaimsPrincipal(new List<ClaimsIdentity> { identity});
+                ClaimsPrincipal principal = new ClaimsPrincipal(new List<ClaimsIdentity> { identity });
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, 
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                     principal, authProperties);
                 return RedirectToPage("/index");
             }
             return Page();
         }
-    }
-
-    public class Credential
-    {
-        [Required]
-        [Display(Name = "User Name")]
-        public string UserName { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-        [Display(Name = "Remeber Me")]
-        public bool RememberMe { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace Web_Api.Controllers
                     new Claim(ClaimTypes.Name, "admin"),
                     new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
                     new Claim("Department", "HR"),
-                    new Claim("Admin", "true"),
+                    //new Claim("Admin", "true"),
                     new Claim("Manager", "true"),
                     new Claim("EmploymentDate", "2021-02-01")
                 };

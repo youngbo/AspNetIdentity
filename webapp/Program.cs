@@ -12,6 +12,14 @@ builder.Services.AddHttpClient("ybWebApi", client =>
     client.BaseAddress = new Uri("https://localhost:7224/");
 });
 
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.IdleTimeout = TimeSpan.FromHours(8);
+    options.Cookie.IsEssential = true;
+
+});
+
 builder.Services
     .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
@@ -20,6 +28,7 @@ builder.Services
         // default is /account/login  use if it need a custom login path
         options.LoginPath = "/account/login";
         options.AccessDeniedPath = "/account/accessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromHours(2);
     });
 
 builder.Services.AddAuthorization(options =>
@@ -53,6 +62,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseSession();
 
 app.UseAuthentication();
 

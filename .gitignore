@@ -7,3 +7,7 @@ webapi/obj/
 webapp/.vs/
 webapp/bin/
 webapp/obj/
+
+aspNetCoreIdentity/.vs/
+aspNetCoreIdentity/bin/
+aspNetCoreIdentity/obj/

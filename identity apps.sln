@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web App", "webapp\Web App.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web Api", "webapi\Web Api.csproj", "{BF835269-4883-4199-BF10-745D36787917}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreIdentity", "aspNetCoreIdentity\AspNetCoreIdentity.csproj", "{F562B022-C450-4FCA-866D-E39BC305398D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF835269-4883-4199-BF10-745D36787917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF835269-4883-4199-BF10-745D36787917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF835269-4883-4199-BF10-745D36787917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F562B022-C450-4FCA-866D-E39BC305398D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F562B022-C450-4FCA-866D-E39BC305398D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F562B022-C450-4FCA-866D-E39BC305398D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F562B022-C450-4FCA-866D-E39BC305398D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

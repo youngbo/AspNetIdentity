@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web App", "webapp\Web App.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web Api", "webapi\Web Api.csproj", "{BF835269-4883-4199-BF10-745D36787917}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreIdentity", "aspNetCoreIdentity\AspNetCoreIdentity.csproj", "{F562B022-C450-4FCA-866D-E39BC305398D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreIdentity", "aspNetCoreIdentity\AspNetCoreIdentity.csproj", "{F562B022-C450-4FCA-866D-E39BC305398D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

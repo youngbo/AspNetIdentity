@@ -3,6 +3,7 @@
 {
     <form method="post" class="form-inline" asp-page="/Account/Logout">
         Welcome @User.Identity.Name
+        / Organisation : (@User.Claims.First(x=>x.Type=="Organisation").Value)
         <button type="submit" class="ml-2 btn btn-link">Logout</button>
     </form>
 }

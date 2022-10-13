@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreIdentity.Data.Account;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +12,9 @@ namespace AspNetCoreIdentity.Pages.Account
 {
     public class LogoutModel : PageModel
     {
-        private readonly Microsoft.AspNetCore.Identity.SignInManager<IdentityUser> signInManager;
+        private readonly Microsoft.AspNetCore.Identity.SignInManager<User> signInManager;
 
-        public LogoutModel(SignInManager<IdentityUser> signInManager)
+        public LogoutModel(SignInManager<User> signInManager)
         {
             this.signInManager = signInManager;
         }

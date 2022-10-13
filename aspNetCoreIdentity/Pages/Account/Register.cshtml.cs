@@ -35,7 +35,9 @@ namespace AspNetCoreIdentity.Pages.Account
             var result = await this.userManager.CreateAsync(user, RegisterViewModel.Password);
             if (result.Succeeded)
             {
-                return RedirectToPage("/Account/Login");
+                var confirmationToken = await this.userManager.GenerateEmailConfirmationTokenAsync(user);
+                return Redirect(Url.PageLink(pageName: "/Account/ConfirmEmail",
+                    values: new { userId = user.Id, token = confirmationToken }));
             }
             else
             {

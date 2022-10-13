@@ -2,18 +2,24 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Mail;
+using System.Net;
+using AspNetCoreIdentity.Services;
 
 namespace AspNetCoreIdentity.Pages.Account
 {
+
     public class RegisterModel : PageModel
     {
         [BindProperty]
         public RegisterViewModel RegisterViewModel { get; set; }
         private readonly UserManager<IdentityUser> userManager;
+        private readonly IEmailService emailService;
 
-        public RegisterModel(UserManager<IdentityUser> userManager)
+        public RegisterModel(UserManager<IdentityUser> userManager, IEmailService emailService)
         {
             this.userManager = userManager;
+            this.emailService = emailService;
         }
         public void OnGet()
         {
@@ -36,8 +42,18 @@ namespace AspNetCoreIdentity.Pages.Account
             if (result.Succeeded)
             {
                 var confirmationToken = await this.userManager.GenerateEmailConfirmationTokenAsync(user);
-                return Redirect(Url.PageLink(pageName: "/Account/ConfirmEmail",
-                    values: new { userId = user.Id, token = confirmationToken }));
+                //return Redirect(Url.PageLink(pageName: "/Account/ConfirmEmail",
+                //            values: new { userId = user.Id, token = confirmationToken }));
+
+                var confirmationLink = Url.PageLink(pageName: "/Account/ConfirmEmail",
+                    values: new { userId = user.Id, token = confirmationToken });
+
+                await emailService.SendAsync("frankliu.associates@gmail.com",
+                    user.Email,
+                    "Please confirm your email",
+                    $"Please click on this link to confirm your email address: {confirmationLink}");
+
+                return RedirectToPage("/Account/Login");
             }
             else
             {
@@ -48,7 +64,6 @@ namespace AspNetCoreIdentity.Pages.Account
 
                 return Page();
             }
-
         }
     }
 

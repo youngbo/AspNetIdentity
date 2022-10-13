@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="246px" preserveAspectRatio="none" style="width:825px;height:246px;background:#FFFFFF;" version="1.1" viewBox="0 0 825 246" width="825px" zoomAndPan="magnify"><defs/><g><!--MD5=[24add822970012a00cd97a40cd79feff]
+class UserManager--><g id="elem_UserManager"><rect codeLine="1" fill="#F1F1F1" height="114.0469" id="UserManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="502" x="316.5" y="71"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="525" y="90.5332">UserManager</text><line style="stroke:#181818;stroke-width:0.5;" x1="317.5" x2="817.5" y1="98.6094" y2="98.6094"/><line style="stroke:#181818;stroke-width:0.5;" x1="317.5" x2="817.5" y1="106.6094" y2="106.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="333" x="322.5" y="125.1426">Task&lt;IdentityResult&gt; CreateAsync(TUser, password)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="490" x="322.5" y="142.752">Task&lt;SignInResult&gt; PasswordSignInAsync(username, password, isPersistent)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="388" x="322.5" y="160.3613">Task&lt;String&gt; GenerateEmailConfirmationTokenAsync(TUser)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="350" x="322.5" y="177.9707">Task&lt;IdentityResult&gt; ConfirmEmailAsync(TUser, String)</text></g><path d="M6,6 L6,65.0547 A0,0 0 0 0 6,65.0547 L268,65.0547 A0,0 0 0 0 268,65.0547 L268,39.5273 L320.5,119.4141 L268,31.5273 L268,16 L258,6 L6,6 A0,0 0 0 0 6,6 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M258,6 L258,16 L268,16 L258,6 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="12" y="24.4951">Creates the specified user</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="237" x="12" y="40.8467">in the backing store with given password,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="12" y="57.1982">as an asynchronous operation.</text><path d="M6,75.0547 L6,134.1094 A0,0 0 0 0 6,134.1094 L281,134.1094 A0,0 0 0 0 281,134.1094 L281,108.582 L320.5,137.0234 L281,100.582 L281,85.0547 L271,75.0547 L6,75.0547 A0,0 0 0 0 6,75.0547 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M271,75.0547 L271,85.0547 L281,85.0547 L271,75.0547 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="250" x="12" y="93.5498">Attempts to sign in the specified userName</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="154" x="12" y="109.9014">and password combination</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="12" y="126.2529">as an asynchronous operation.</text><path d="M6,144.1094 L6,186.8125 A0,0 0 0 0 6,186.8125 L254,186.8125 A0,0 0 0 0 254,186.8125 L254,169.4609 L320.5,154.6328 L254,161.4609 L254,154.1094 L244,144.1094 L6,144.1094 A0,0 0 0 0 6,144.1094 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M244,144.1094 L244,154.1094 L254,154.1094 L244,144.1094 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223" x="12" y="162.6045">Generates an email confirmation token</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="12" y="178.9561">for the specified user.</text><path d="M6,196.8125 L6,239.5156 A0,0 0 0 0 6,239.5156 L274,239.5156 A0,0 0 0 0 274,239.5156 L274,222.1641 L320.5,172.2422 L274,214.1641 L274,206.8125 L264,196.8125 L6,196.8125 A0,0 0 0 0 6,196.8125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M264,196.8125 L264,206.8125 L274,206.8125 L264,196.8125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="243" x="12" y="215.3076">Validates that an email confirmation token</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="12" y="231.6592">matches the specified user.</text><!--MD5=[88b71147d9f5b0145878567d5beef600]
+@startuml
+class UserManager {
+  Task<IdentityResult> CreateAsync(TUser, password)
+  Task<SignInResult> PasswordSignInAsync(username, password, isPersistent)
+  Task<String> GenerateEmailConfirmationTokenAsync(TUser)
+  Task<IdentityResult> ConfirmEmailAsync(TUser, String)
+}
+
+note left of UserManager::CreateAsync
+  Creates the specified user 
+  in the backing store with given password, 
+  as an asynchronous operation.
+end note
+
+note left of UserManager::PasswordSignInAsync
+  Attempts to sign in the specified userName 
+  and password combination 
+  as an asynchronous operation.
+end note
+
+note left of UserManager::GenerateEmailConfirmationTokenAsync
+  Generates an email confirmation token 
+  for the specified user.
+end note 
+
+note left of UserManager::ConfirmEmailAsync
+  Validates that an email confirmation token 
+  matches the specified user.
+end note
+
+hide class circle
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 02:01:30 KST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: AU
+--></g></svg>

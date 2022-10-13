@@ -42,18 +42,21 @@ namespace AspNetCoreIdentity.Pages.Account
             if (result.Succeeded)
             {
                 var confirmationToken = await this.userManager.GenerateEmailConfirmationTokenAsync(user);
-                //return Redirect(Url.PageLink(pageName: "/Account/ConfirmEmail",
-                //            values: new { userId = user.Id, token = confirmationToken }));
 
-                var confirmationLink = Url.PageLink(pageName: "/Account/ConfirmEmail",
-                    values: new { userId = user.Id, token = confirmationToken });
+                // For now, it redirect to confirmEmail link.
+                return Redirect(Url.PageLink(pageName: "/Account/ConfirmEmail",
+                            values: new { userId = user.Id, token = confirmationToken }));
 
-                await emailService.SendAsync("frankliu.associates@gmail.com",
-                    user.Email,
-                    "Please confirm your email",
-                    $"Please click on this link to confirm your email address: {confirmationLink}");
+                // It requires SMTP configuration in an appsettings.json
+                //var confirmationLink = Url.PageLink(pageName: "/Account/ConfirmEmail",
+                //    values: new { userId = user.Id, token = confirmationToken });
 
-                return RedirectToPage("/Account/Login");
+                //await emailService.SendAsync("frankliu.associates@gmail.com",
+                //    user.Email,
+                //    "Please confirm your email",
+                //    $"Please click on this link to confirm your email address: {confirmationLink}");
+
+                //return RedirectToPage("/Account/Login");
             }
             else
             {
